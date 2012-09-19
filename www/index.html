@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GTask Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />        
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
+        <!-- The following must be AFTER jquery core and BEFORE jquery mobile js -->
+        <script type="text/javascript">
+        $(document).bind("mobileinit", function() {
+            console.log("mobileinit GLOBAL - override jQM global config values before jQM loads");
+            $.mobile.touchOverflowEnabled = true;
+            $.mobile.defaultPageTransition = 'none'; // optional - for better performance on Android
+            $.mobile.loadingMessageTextVisible = true; // optional - added to show text message
+            $.mobile.buttonMarkup.hoverDelay = 20; // optional added to remove sluggishness - jqm default 200
+        });
+        </script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>       
+        
+        <script type="text/javascript" charset="utf-8" src="js/liquid.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/helper/liquid.helper.oauth.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/model/liquid.model.tasks.js"></script>
+        
+        <script type="text/javascript" charset="utf-8" src="js/gapi-client.min.js"></script>
+    </head>
+    
+   <body>
+   
+<!--
+   =================================================================================================
+   Unauthorized Page -> First welcome screen
+   ---------------------------
+   * Welcome page which explains why this app should be authorized
+   ================================================================================================= 
+-->   
+   <div data-role="page" id="page-unauthorized">
+
+       <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+           <h3> GTask Demo </h3>
+       </div>
+
+       <div id="content" data-role="content">
+           <h2> Getting Started </h2>
+           <div>
+               <p>
+                   Authorize the App from your Google Account and you are ready to go!
+               </p>
+           </div>
+           <div id="access-code" data-authcode="">
+               <a href="#" id="auth-app" data-role="button" data-transition="none" data-theme="e" data-icon="check" data-iconpos="right"> 
+                   Authorize &amp; GO! 
+               </a>
+           </div>
+       </div><!-- /content -->
+       
+       <div data-theme="a" data-role="footer" data-position="fixed" data-tap-toggle="false">
+           <h4>
+                Powered by <span class="google-text-logo"><span class="gl-g">G</span><span class="gl-o1">o</span><span class="gl-o2">o</span>
+                <span class="gl-g2">g</span><span class="gl-l">l</span><span class="gl-e">e</span>&trade;</span> Task 
+           </h4>
+       </div>
+   </div><!-- /page -->
+<!--   -->   
+   
+<!--
+   =================================================================================================
+   Task List - Page/Activity
+   ---------------------------
+   * This is the application's main activity which list all the tasks for respective user
+   * This page has rich UI which enables user to manage their task - like add, edit, update or delete
+   ================================================================================================= 
+-->
+	<div data-role="page" id="page-tasklist">
+	
+	    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+	        <h1>GTask Demo</h1>
+	        <a href="#" id="head-menu-refresh" data-theme="a" data-role="button" data-icon="refresh" data-iconpos="notext" 
+	           class="ui-btn-right refresh-list" style="right:2.85em;">Refresh</a>
+	           
+	        <a href="#" id="head-menu-signout" data-theme="a" data-role="button" data-icon="alert" data-iconpos="notext" 
+	           class="ui-btn-right" style="right:0.55em;">Signout</a>
+	                                
+	    </div><!-- /header -->
+	
+	    <div data-role="content">   
+	        
+	        <div id="qt-listview-error" class="ui-body ui-body-e request-info hide">
+	            <h4>Error Processing Your request</h4>
+	            <h6></h6>
+	            <a href="#" id="btn-refresh" data-role="button" class="refresh-list" data-icon="refresh" 
+	               data-mini="true" data-inline="true" data-theme="b">Try Again</a>
+	               
+	            <a href="#" id="btn-hide-error" data-role="button" data-icon="delete" 
+	               data-mini="true" data-inline="true" data-theme="c">Hide</a>               
+	        </div>         
+	        
+	        <!--
+	        	Task List-View Container
+	        	---------------------------
+	        	* All the task are contained winthing this listview.
+	        	* Check "pageinit" for this page for markup and other ui hooks
+	        -->
+	        <ul data-role="listview" id="qt-listview-tasks">
+	
+	        </ul>
+	                
+	        <div id="qt-listview-info" class="ui-body ui-body-e request-info hide">
+	            <h4>You do not have any Tasks. </h4>
+	            <p>Quick Tip: Add a Task by typing in the input box above </p>
+	        </div>
+	        
+	    </div><!-- /content -->
+	  
+	</div><!-- /page -->
+
+
+<!-- ======================================== END OF LIST VIEW PAGE ========================================== -->   
+
+
+
+
+
+ 
+   <script type="text/javascript" src="js/gtaskdemo.main.js" charset="utf-8"></script>
+   
+   </body> 
+</html>
