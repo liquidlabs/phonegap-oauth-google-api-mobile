@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Quick Task</name>
+    <name>Google Tasks Demo</name>
 
     <description>
-        Quick Task: Quick way to add Tasks
+        A Demo of Google Task using OAuth 2.0
     </description>
 
     <author href="http://liquidlabs.ca/" email="feedback@liquidlabs.ca">
