@@ -65,10 +65,10 @@
 				response_type: "code",
 
 				// ## Update this value: The client_id obtained during application registration ##
-				client_id: "###",
+				client_id: "816187334113.apps.googleusercontent.com",
 				
 				// ## Update this value: The client secret obtained during application registration ##
-				client_secret: "###", 		
+				client_secret: "WZ1yoawpb1dYfh7d54jD3feN", 		
 				
 				// or urn:ietf:wg:oauth:2.0:oob
 				redirect_uri: "http://localhost", 				 
@@ -85,7 +85,7 @@
 				
 				access_type: "offline",
 				
-				// ## Update this value: The state, update this from google server ##
+				// ## Not required to be updated: only used for echoing ##
 				state: "lligtaskinit"
 			}		
 		},
