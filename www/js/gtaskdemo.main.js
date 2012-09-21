@@ -65,10 +65,10 @@ function authorizeWindowChange(uriLocation) {
     } 
     else if (oAuth.requestStatus == oAuth.status.ERROR) 
     {
-    	console.log("Error >> oAuth Processing");
+    	console.log("ERROR - status received = oAuth.status.ERROR");
     } 
     else {
-        // do nothing I guess!
+        // do nothing, since user can be visiting different urls
     }
 }
 
@@ -85,7 +85,7 @@ function populateTaskList() {
 	liquid.model.tasks.getList(function(data) {
         $('#qt-listview-tasks').empty();
         
-        console.log(JSON.stringify(data));
+        console.log(JSON.stringify(data)); // debug JSON response data
         
         /* check if there's an error from server, then display
          * error and retry
