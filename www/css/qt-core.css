@@ -7,26 +7,6 @@
     margin: -.2em 0 0 0;
 }
 
-#qt-listview-tasks li h5 {
-    padding: 0;    
-    min-height: 32px;
-}
-
-.task-item {
-	background: #fff !important;
-	border: none;
-	border-bottom: solid 1px #e5e5e5 !important;
-	padding: 5px 15px 5px !important;
-}
-
-.task-item h5 {
-	color: #737373 !important;
-}
-
-#qt-listview-info {
-	margin-top: 3em;
-}
-
 .hide {
 	display: none;
 }
