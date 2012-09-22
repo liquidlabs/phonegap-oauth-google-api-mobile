@@ -6,8 +6,7 @@ Implementing OAuth 2.0 with Google API in Phonegap / ChildBrowser
  a Google Tasks API using OAuth 2.0 and then it accesses the User's Tasks and displays 
  them in a list view.
  
- ![AuthorizeView](http://www.itsalif.info/sites/default/files/1-authorized-cropped.png "AuthorizeView")
- ![TaskListView](http://www.itsalif.info/sites/default/files/2-authorize-cropped.png "TaskListView")
+ ![AuthorizeView](http://www.itsalif.info/sites/default/files/1-authorized.png "AuthorizeView")
  
 
 Download and Install App
