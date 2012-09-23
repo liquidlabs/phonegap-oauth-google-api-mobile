@@ -6,8 +6,10 @@ Implementing OAuth 2.0 with Google API in Phonegap / ChildBrowser
  a Google Tasks API using OAuth 2.0 and then it accesses the User's Tasks and displays 
  them in a list view.
  
- ![AuthorizeView](http://www.itsalif.info/sites/default/files/1-authorized.png "AuthorizeView")
- 
+ ![AuthorizeView](https://dl.dropbox.com/u/2676779/gtask-demo-1-authorize.png "Authorize View - App first screen")
+ ![AuthorizeGoogleLogin](https://dl.dropbox.com/u/2676779/gtask-demo-2-authorize-login.png "Authorize - Login to Google Service")
+ ![AuthorizeAllowApp](https://dl.dropbox.com/u/2676779/gtask-demo-3-authorize-allow.png "Authorize - Allow App to access data")
+ ![TaskListView](https://dl.dropbox.com/u/2676779/gtask-demo-4-authorized-tasklist.png "Task List View")
 
 Download and Install App
 ----------------------------------------------------------------
@@ -19,6 +21,7 @@ You can download and install the App from Phonegap Build directly:
 Read Online Tutorial
 ---------------------------------------------------------------
 The online tutorial explaining the code are posted in the following places (both are same):
+<br />
 <http://liquidlabs.ca/2012/09/09/oauth-google-api-phonegap-childbrowser-jquery-mobile/>
 
 OR
