@@ -14,8 +14,8 @@ And following library files:
  * `jquery.js` (jquery core library - required for AJAX calls)
 
 ### Optional Files ###
- * `gapi-client.min.js` [OPTIONAL] (google API JS Client - only required IFF you plan to use this to simplify your life, otherwise you can just use plain-old-ajax-calls to get data)
- * `model/liquid.model.tasks.js` [OPTIONAL] (This is an example "model" class, which uses GAPI client to access Google Tasks API)
+ * `gapi-client.min.js` (google API JS Client - only required IFF you plan to use this to simplify your life, otherwise you can just use plain-old-ajax-calls to get data)
+ * `model/liquid.model.tasks.js` (This is an example "model" class, which uses GAPI client to access Google Tasks API)
 
 
 
