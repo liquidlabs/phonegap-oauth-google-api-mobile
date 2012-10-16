@@ -24,11 +24,7 @@ You can download and install the App from Phonegap Build directly:
  
 Read Online Tutorial
 ---------------------------------------------------------------
-The online tutorial explaining the code are posted in the following places (both are same):
-<http://liquidlabs.ca/2012/09/09/oauth-google-api-phonegap-childbrowser-jquery-mobile/>
-
-OR
-
+The online tutorial explaining the code is posted at : <br />
 <http://www.itsalif.info/content/oauth-google-api-gapi-phonegap-childbrowser-jquery>
  
 
