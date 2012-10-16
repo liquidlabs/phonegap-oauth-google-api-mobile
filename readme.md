@@ -42,6 +42,14 @@ Currently we've released this only on Google Play store.
 [Quick Task on Google&trade; Play][PlayStoreLink]
   [PlayStoreLink]: https://play.google.com/store/apps/details?id=ca.liquidlabs.quicktask
 
+
+
+Known Issues
+---------------------------------
+ * Some users have reported that this app does not authorize on Windows Phone platform. It gives `invalid_grant` error during authorization process. It could be related with `localStorage` html5 data-store, but not confirmed yet. If you have already fixed this issue, please share the fix with us.
+
+
+
 Credits
 ---------------------------------------------------------------
 
