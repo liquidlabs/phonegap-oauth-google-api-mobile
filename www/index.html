@@ -3,9 +3,8 @@
     <head>
         <title>GTask Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
-		<link rel="stylesheet" href="css/qt-core.css" /><!-- app custom css and overrides -->
-		<script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
+        <link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />        
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
         <!-- The following must be AFTER jquery core and BEFORE jquery mobile js -->
         <script type="text/javascript">
         $(document).bind("mobileinit", function() {
@@ -17,14 +16,16 @@
         });
         </script>
         <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.1.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>       
+		<!-- replace the 2 script below (cordova, childbrower) with the latest one -->
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.0.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/childbrowser.js"></script>       
         
         <script type="text/javascript" charset="utf-8" src="js/liquid.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/helper/liquid.helper.oauth.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/model/liquid.model.tasks.js"></script>
         
-        <script type="text/javascript" charset="utf-8" src="js/gapi-client.min.js"></script>
+		<!-- refer to GAPI directly -->
+        <script type="text/javascript" charset="utf-8" src="https://apis.google.com/js/client.js"></script>
     </head>
     
    <body>
@@ -58,7 +59,8 @@
        
        <div data-theme="a" data-role="footer" data-position="fixed" data-tap-toggle="false">
            <h4>
-                Powered by Google&trade; Task 
+                Powered by <span class="google-text-logo"><span class="gl-g">G</span><span class="gl-o1">o</span><span class="gl-o2">o</span>
+                <span class="gl-g2">g</span><span class="gl-l">l</span><span class="gl-e">e</span>&trade;</span> Task 
            </h4>
        </div>
    </div><!-- /page -->
