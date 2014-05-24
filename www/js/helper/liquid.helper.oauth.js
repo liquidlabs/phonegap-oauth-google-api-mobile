@@ -5,7 +5,6 @@
  * The following files should be included before this file:
  * 
  * @requires cordova.js (Phonegap library)
- * @requires childbrowser.js (Phonegap Childbrowser plugin)
  * @requires jquery.js (jquery library)
  * @requires gapi-client.min.js (google API JS Client)
  * @requires liquid.js (The Base library)
@@ -89,18 +88,12 @@
 			
 			$this.callbackFunc = callBack;
 			$this.requestStatus = $this.status.NOT_DETERMINED;
-			
-			// Now open new browser
-			window.plugins.childBrowser.showWebPage(authUri, {showLocationBar : true}); 		
-			window.plugins.childBrowser.onClose = $this.onAuthClose;		
-			window.plugins.childBrowser.onLocationChange = $this.onAuthUrlChange;		
+            
+            // Now open new browser
+            $this.authWindow = window.open(authUri, '_blank', 'location=true,toolbar=true');
+            $($this.authWindow).on('loadstart', $this.onAuthUrlChange);
 		},
 	
-		/* Auth Window closed */
-		onAuthClose: function() {
-			//console.log("Auth window closed");
-		},
-		
 		/* OAuth Successfully done */
 		onAuthSuccess: function() {
 			//console.log('Auth Success?');
@@ -120,8 +113,9 @@
 		 * 
 		 * @param {string} uriLocation The URI Location 
 		 */
-		onAuthUrlChange: function(uriLocation) {
+		onAuthUrlChange: function(e) {
 			var $this = helper.oauth;
+            var uriLocation = e.originalEvent.url;
 			
 			if(uriLocation.indexOf("code=") != -1) {
 				$this.requestStatus = $this.status.SUCCESS;
@@ -130,14 +124,14 @@
 				$this.authCode = $this.getParameterByName("code", uriLocation);
 				
 				// close the childBrowser
-				window.plugins.childBrowser.close();
+				$this.authWindow.close();
 			}
 		    else if(uriLocation.indexOf("error=") != -1) 
 		    {
 		    	$this.requestStatus = $this.status.ERROR;		    	
 		    	$this.errorMessage = $this.getParameterByName("error", uriLocation);
 		    	
-		    	window.plugins.childBrowser.close();
+		    	$this.authWindow.close();
 		    }
 		    else {
 		    	$this.requestStatus = $this.status.NOT_DETERMINED;
