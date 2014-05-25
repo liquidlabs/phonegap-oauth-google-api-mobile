@@ -13,9 +13,9 @@ Implementing OAuth 2.0 with Google API in Cordova
 
 Trying the example with cordova cli on android
 ----------------------------------------------
-  cordova platform add android
-  cordova plugin add org.apache.cordova.inappbrowser
-  cordova run
+    cordova platform add android
+    cordova plugin add org.apache.cordova.inappbrowser
+    cordova run
 
 Known Issues
 ---------------------------------
