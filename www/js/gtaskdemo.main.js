@@ -5,11 +5,11 @@
  * =================================================================================================
  * BEGIN EVENT HOOK & HANDLING USING JS
  * =================================================================================================
- *  
+ *
  * Demo showing how to implement Google API with oAuth.
- *  
- * Disclaimer: The code below is just another Javascript Spaghetti code. To avoid such spaghetti code, please look into 
- * something like backbone.js to make the actual App :)! 
+ *
+ * Disclaimer: The code below is just another Javascript Spaghetti code. To avoid such spaghetti code, please look into
+ * something like backbone.js to make the actual App :)!
  */
 
 
@@ -28,7 +28,7 @@ function startApp() {
     var oAuth = liquid.helper.oauth;
 
     $("#access-code").click(function(event) {
-        liquid.helper.oauth.authorize(authorizeWindowChange);
+        liquid.helper.oauth.authorize(startPageTaskList);
         event.preventDefault();
     });
 
@@ -45,34 +45,6 @@ function startPageTaskList() {
         transition : "none",
     });
 }
-
-
-
-function authorizeWindowChange(uriLocation) {
-    //console.log("Location Changed: " + uriLocation); 
-    var oAuth = liquid.helper.oauth;
-
-    // oAuth process is successful! 
-    if (oAuth.requestStatus == oAuth.status.SUCCESS) {
-        var authCode = oAuth.authCode;
-
-        // have the authCode, now save the refreshToken and start Page TaskList
-        oAuth.saveRefreshToken({ 
-            auth_code: oAuth.authCode
-        }, function() {
-            startPageTaskList();
-        });
-
-    } 
-    else if (oAuth.requestStatus == oAuth.status.ERROR) 
-    {
-        console.log("ERROR - status received = oAuth.status.ERROR");
-    } 
-    else {
-        // do nothing, since user can be visiting different urls
-    }
-}
-
 
 /**
  * Populates the list of Tasks
@@ -93,17 +65,17 @@ function populateTaskList() {
          */
         if (data.error) {
             console.log('Unable to load Task List >> ' + data.error.message);
-            $.mobile.hidePageLoadingMsg();   
-            return;         
+            $.mobile.hidePageLoadingMsg();
+            return;
         }
 
         /**
          * if there are no elements in it, then
-         * display the info message, and return 
+         * display the info message, and return
          */
         if (!data.items) {
             $('#qt-listview-info').show();
-            $.mobile.hidePageLoadingMsg();         
+            $.mobile.hidePageLoadingMsg();
             return;
         }
 
@@ -113,13 +85,13 @@ function populateTaskList() {
             var item = data.items[i];
 
             $('#qt-listview-tasks')
-            .append('<li><h5>' 
+            .append('<li><h5>'
                     + item.title +
                     '</h5></li>');
         }
 
         $('#qt-listview-tasks').listview('refresh');
-        $.mobile.hidePageLoadingMsg();   
+        $.mobile.hidePageLoadingMsg();
     });
 }
 
@@ -152,7 +124,7 @@ function goHome() {
 
         $('#btn-hide-error').click(function(event) {
 
-            $('#qt-listview-error').hide();   
+            $('#qt-listview-error').hide();
             event.preventDefault();
         });
 
