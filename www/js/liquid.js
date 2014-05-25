@@ -28,86 +28,87 @@
  *               global liquid variable to it.
  */
 (/** @lends <global> */function(window) {
-   
-   /* check if the library was already included */	
-   var _liquid = window.liquid;	
-   
-   /* if it already exists, then simply return */
-   if (_liquid) {
-	   return;
-   }
-   
-   /* 
-    * Create a global object and assign values to it.
-    * @global
-    * @name liquid
-    */   
-   var liquid = {
-	
-		/* the name of the App */
-		appName: 'GTask - Demo',
-		
-		/**
-		 * Configuration values needs to be declared below
-		 */
-		config: {
-			
-			debug: true,
-			
-			/**
-			 * Configuration values for Google API (GAPI)
-			 */
-			 gapi : {
-				
-				endpoint: "https://accounts.google.com/o/oauth2/auth",
-				endtoken: "https://accounts.google.com/o/oauth2/token", // token endpoint
-				
-				response_type: "code",
 
-				// ## Update this value: The client_id obtained during application registration ##
-				client_id: "816187334113.apps.googleusercontent.com",
-				
-				// ## Update this value: The client secret obtained during application registration ##
-				client_secret: "WZ1yoawpb1dYfh7d54jD3feN", 		
-				
-				// or urn:ietf:wg:oauth:2.0:oob
-				redirect_uri: "http://localhost", 				 
+    /* check if the library was already included */ 
+    var _liquid = window.liquid; 
 
-				// The URI registered with the application
-				redirect_url_token: "", 						
+    /* if it already exists, then simply return */
+    if (_liquid) {
+        return;
+    }
 
-				// @see https://developers.google.com/google-apps/tasks/auth
-				scope: "https://www.googleapis.com/auth/tasks", 
-				
-				/* As defined in the OAuth 2.0 specification, this field must contain a value 
-				 * of "authorization_code" or "refresh_token" */			
-				grantTypes: { AUTHORIZE: "authorization_code", REFRESH: "refresh_token" }, 
-				
-				access_type: "offline",
-				
-				// ## Not required to be updated: only used for echoing ##
-				state: "lligtaskinit"
-			}		
-		},
-		
-		
-		/** 
-		 * Empty helper and model which are extended later in other libraries 
-		 */
-		helper: {},	
-		model: {},
-			
-		log: function(message) {
-			
-			/* if debug mode is true, then echo message */
-			if (liquid.config.debug) {
-				console.log(message);
-			}
-		}
-   };
-   
-   
-   /* now assign liquid to window object to make it globally accessible */
-   window.liquid = liquid;
-   
+    /**
+     * Create a global object and assign values to it.
+     * @global
+     * @name liquid
+     */   
+    var liquid = {
+
+        /* the name of the App */
+        appName: 'GTask - Demo',
+
+        /**
+         * Configuration values needs to be declared below
+         */
+        config: {
+
+            debug: true,
+
+            /**
+             * Configuration values for Google API (GAPI)
+             */
+            gapi : {
+
+                endpoint: "https://accounts.google.com/o/oauth2/auth",
+                endtoken: "https://accounts.google.com/o/oauth2/token", // token endpoint
+
+                response_type: "code",
+
+                // ## Update this value: The client_id obtained during application registration ##
+                client_id: "816187334113.apps.googleusercontent.com",
+
+                // ## Update this value: The client secret obtained during application registration ##
+                client_secret: "WZ1yoawpb1dYfh7d54jD3feN",   
+
+                // or urn:ietf:wg:oauth:2.0:oob
+                redirect_uri: "http://localhost",      
+
+                // The URI registered with the application
+                redirect_url_token: "",       
+
+                // @see https://developers.google.com/google-apps/tasks/auth
+                scope: "https://www.googleapis.com/auth/tasks", 
+
+                /* As defined in the OAuth 2.0 specification, this field must contain a value 
+                 * of "authorization_code" or "refresh_token" 
+                 */   
+                grantTypes: { AUTHORIZE: "authorization_code", REFRESH: "refresh_token" }, 
+
+                access_type: "offline",
+
+                // ## Not required to be updated: only used for echoing ##
+                state: "lligtaskinit"
+            }  
+        },
+
+
+        /** 
+         * Empty helper and model which are extended later in other libraries 
+         */
+        helper: {}, 
+        model: {},
+
+        log: function(message) {
+
+            /* if debug mode is true, then echo message */
+            if (liquid.config.debug) {
+                console.log(message);
+            }
+        }
+    };
+
+
+    /* now assign liquid to window object to make it globally accessible */
+    window.liquid = liquid;
+
 })(window);
